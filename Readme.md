@@ -1,15 +1,18 @@
-This repository is used to demo a failure 
+This repository is used to demo a failure caused by nuget package reference version range.
+
+
+
 # Repro steps:
 
 * build the app and dependent lib:
 ```
 dotnet build MyNetFxApp/MyNetFxApp.csproj
 ```
-* publish the lib
+* retrieve all the dependencies of the library by publish it
 ```
 dotnet publish MyLibrary/MyLibrary.csproj
 ```
-* Copy everything under `MyLibrary\bin\Debug\netstandard2.0\publish\` to `MyNetFxApp\bin\Debug\`
+* Copy everything under `MyLibrary\bin\Debug\netstandard2.0\publish\` to `MyNetFxApp\bin\Debug\`, so that the app should be ready to run
 
 * Run the app:
 ```
